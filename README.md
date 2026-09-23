@@ -1,31 +1,27 @@
 # Research × Design
 
-Final static website for the course project.
+设计研究课程项目的最终静态网站。
 
-## Files
+## 网站文件
 
-- `index.html` — website entry file
-- `assets/` — images extracted from the original self-contained HTML for cleaner hosting and caching
-- `.gitignore` — ignores common OS metadata files
+- `index.html` — 完整网站入口文件（图片已内嵌，无需额外资源文件）
+- `.gitignore` — 忽略常见系统文件
 
-## Deploy with Cloudflare Pages
+## Cloudflare Pages 部署
 
-1. Push this folder to a GitHub repository.
-2. In Cloudflare Dashboard, open **Workers & Pages** → **Create application** → **Pages**.
-3. Choose **Import an existing Git repository** and select the repository.
-4. Use:
-   - Production branch: `main`
-   - Framework preset: None / no framework
-   - Build command: `exit 0` (or leave empty if the UI permits)
-   - Build output directory: `.`
-5. Deploy. The site root must contain `index.html`.
+1. 将本仓库连接到 Cloudflare Pages。
+2. Production branch 选择 `main`。
+3. Framework preset 选择 None / 无框架。
+4. Build command 留空（如界面要求可使用 `exit 0`）。
+5. Build output directory 使用 `.`。
+6. 部署后，仓库根目录的 `index.html` 即为网站首页。
 
-## Deploy with Vercel
+## Vercel 部署
 
-1. Import the same GitHub repository into Vercel.
-2. Set Framework Preset to **Other**.
-3. Leave the Build Command empty.
-4. Use the repository root (`.`) as the output/static directory if Vercel asks for one.
-5. Deploy.
+1. 在 Vercel 导入本 GitHub 仓库。
+2. Framework Preset 选择 `Other`。
+3. Build Command 留空。
+4. 使用仓库根目录作为静态网站目录。
+5. 部署即可。
 
-Every future push to the production branch can trigger a new deployment after the Git integration is connected.
+后续只要更新 `main` 分支中的 `index.html`，连接 GitHub 的托管平台即可自动重新部署。
